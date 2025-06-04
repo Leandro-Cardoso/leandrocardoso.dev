@@ -12,6 +12,10 @@ header a {
     text-transform: uppercase;
 }
 
+header a.active {
+    color: var(--color-primary);
+}
+
 header ul {
     list-style-type: none;
     padding: 0;
