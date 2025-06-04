@@ -47,8 +47,12 @@
   </nav>
 
   <nav class="language-selector">
-    <a th:href="@{/?lang=pt_BR}" th:classappend="${#locale.language == 'pt' and #locale.country == 'BR' ? 'active' : ''}">PT-BR</a> |
-    <a th:href="@{/?lang=en}" th:classappend="${#locale.language == 'en' ? 'active' : ''}">EN</a>
+    <a th:href="@{/?lang=pt_BR}">
+      <img th:src="@{/images/flag-pt-br-50x50.png}" alt="PT-BR" th:classappend="${#locale.language == 'pt' and #locale.country == 'BR' ? 'active' : ''}">
+    </a>
+    <a th:href="@{/?lang=en}">
+      <img th:src="@{/images/flag-en-50x50.png}" alt="EN" th:classappend="${#locale.language == 'en' ? 'active' : ''}">
+    </a>
   </nav>
 
 </header>

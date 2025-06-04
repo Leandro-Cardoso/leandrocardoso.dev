@@ -16,6 +16,11 @@ header a.active {
     color: var(--color-primary);
 }
 
+header img.active,
+header .language-selector img:hover {
+    border: 3px solid var(--color-primary);
+}
+
 header ul {
     list-style-type: none;
     padding: 0;
@@ -27,4 +32,13 @@ header ul {
 
 header img {
     height: 30px;
+
+    transition: border 0.2s ease-in-out;
+}
+
+header .language-selector {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing);
 }
