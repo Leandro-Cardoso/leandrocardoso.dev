@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{app.title}"></title>
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+</head>
+<body>
+
+    <header th:replace="fragments/header :: header"></header>
+
+    <main class="content">
+        <h1>Teste</h1>
+        <p>teste...</p>
+    </main>
+
+    <footer></footer>
+
+</body>
+</html>

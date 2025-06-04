@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="#{app.title}"></title>
+  <link rel="stylesheet" th:href="@{/css/app.css}">
+  <link rel="stylesheet" th:href="@{/css/header.css}">
+</head>
+<body>
+
+<header th:fragment="header">
+  <div class="logo">
+    <a th:href="#{app.header.home.url}">
+      <img th:src="#{app.header.logo-url}"
+           th:alt="#{app.title}"> </a>
+  </div>
+  <nav>
+    <ul>
+      <li>
+        <a th:href="#{app.header.home.url}"
+           th:text="#{app.header.home}">Inicio</a>
+      </li>
+      <li>
+        <a th:href="#{app.header.about.url}"
+           th:text="#{app.header.about}">Sobre</a>
+      </li>
+      <li>
+        <a th:href="#{app.header.contacts.url}"
+           th:text="#{app.header.contacts}">Contatos</a>
+      </li>
+      <li>
+        <a th:href="#{app.header.projects.url}"
+           th:text="#{app.header.projects}">Projetos</a>
+      </li>
+      <li>
+        <a th:href="#{app.header.blog.url}"
+           th:text="#{app.header.blog}">Blog</a>
+      </li>
+    </ul>
+    <div class="language-selector">
+      <a th:href="@{/?lang=pt_BR}" th:classappend="${#locale.language == 'pt' and #locale.country == 'BR' ? 'active' : ''}">PT-BR</a> |
+      <a th:href="@{/?lang=en}" th:classappend="${#locale.language == 'en' ? 'active' : ''}">EN</a>
+    </div>
+  </nav>
+</header>
+
+</body>
+</html>
