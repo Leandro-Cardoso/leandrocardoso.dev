@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="#{app.title}"></title>
+  <link rel="stylesheet" th:href="@{/css/app.css}">
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+<body>
+
+<footer th:fragment="footer">
+
+  <div class="domain">
+    <a th:href="#{app.footer.domain.url}"
+       th:utext="#{app.footer.domain}">&copy; leandrocardoso.dev</a>
+  </div>
+
+  <nav class="social">
+    <ul>
+      <li>
+        <a th:href="#{app.social.whatsapp.url}" target="_blank">
+          <img th:src="#{app.social.whatsapp.image.url}" th:alt="#{app.social.whatsapp}">
+        </a>
+      </li>
+      <li>
+        <a th:href="#{app.social.mail.url}" target="_blank">
+          <img th:src="#{app.social.mail.image.url}" th:alt="#{app.social.mail}">
+        </a>
+      </li>
+      <li>
+        <a th:href="#{app.social.github.url}" target="_blank">
+          <img th:src="#{app.social.github.image.url}" th:alt="#{app.social.github}">
+        </a>
+      </li>
+      <li>
+        <a th:href="#{app.social.linkedin.url}" target="_blank">
+          <img th:src="#{app.social.linkedin.image.url}" th:alt="#{app.social.linkedin}">
+        </a>
+      </li>
+      <li>
+        <a th:href="#{app.social.x.url}" target="_blank">
+          <img th:src="#{app.social.x.image.url}" th:alt="#{app.social.x}">
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+</footer>
+
+</body>
+</html>

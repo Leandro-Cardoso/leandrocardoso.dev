@@ -6,6 +6,7 @@
     <link rel="icon" type="image/png" th:href="@{/images/favicon.png}">
     <link rel="stylesheet" th:href="@{/css/app.css}">
     <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
 </head>
 <body>
 
@@ -16,7 +17,7 @@
         <p>teste...</p>
     </main>
 
-    <footer></footer>
+    <footer th:replace="fragments/footer :: footer"></footer>
 
 </body>
 </html>
