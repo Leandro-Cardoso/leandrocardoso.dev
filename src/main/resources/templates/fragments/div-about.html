@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+  <div th:fragment="div-about" class="div-about">
+
+    <h2 th:text="#{app.div-about.h2}"></h2>
+    <div class="about-content">
+      <div th:utext="#{app.div-about.text}" class="about-text"></div>
+      <img th:src="#{app.div-about.image.url}" alt="#{app.div-about.image}">
+    </div>
+
+  </div>
+
+</body>
+</html>

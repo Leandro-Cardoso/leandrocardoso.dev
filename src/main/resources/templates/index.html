@@ -7,14 +7,22 @@
     <link rel="stylesheet" th:href="@{/css/app.css}">
     <link rel="stylesheet" th:href="@{/css/header.css}">
     <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <link rel="stylesheet" th:href="@{/css/div-about.css}">
+    <link rel="stylesheet" th:href="@{/css/home.css}">
 </head>
 <body>
 
     <header th:replace="fragments/header :: header"></header>
 
     <main class="content">
-        <h1>Teste</h1>
-        <p>teste...</p>
+
+        <div class="home-title">
+            <h1 th:text="#{app.home.title}"></h1>
+            <span>{DEV}</span>
+        </div>
+
+        <div th:replace="fragments/div-about :: div-about"></div>
+
     </main>
 
     <footer th:replace="fragments/footer :: footer"></footer>
