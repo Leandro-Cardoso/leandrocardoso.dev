@@ -1,4 +1,4 @@
-package dev.leandrocardoso.portfolio.app.config; // Ou o pacote apropriado para suas configurações
+package dev.leandrocardoso.portfolio.config; // Ou o pacote apropriado para suas configurações
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

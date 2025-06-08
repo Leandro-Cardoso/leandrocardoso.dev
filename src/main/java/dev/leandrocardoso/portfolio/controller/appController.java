@@ -1,4 +1,4 @@
-package dev.leandrocardoso.portfolio.app.controller;
+package dev.leandrocardoso.portfolio.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
