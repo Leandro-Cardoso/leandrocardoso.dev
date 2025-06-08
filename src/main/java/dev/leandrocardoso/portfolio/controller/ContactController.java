@@ -2,6 +2,7 @@ package dev.leandrocardoso.portfolio.controller;
 
 import dev.leandrocardoso.portfolio.model.Contact;
 import dev.leandrocardoso.portfolio.service.ContactService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,10 +23,11 @@ public class ContactController {
     }
 
     @GetMapping
-    public String contacts(Model model) {
+    public String contacts(Model model, HttpServletRequest request) {
         List<Contact> contacts = contactService.getAllContacts();
         model.addAttribute("contacts", contacts);
         model.addAttribute("activePage", "contacts");
+        model.addAttribute("request", request);
         return "contacts";
     }
 
