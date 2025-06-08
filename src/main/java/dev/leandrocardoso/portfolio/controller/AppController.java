@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class appController {
+public class AppController {
 
     @GetMapping("/")
     public String home(Model model) {
@@ -19,11 +19,11 @@ public class appController {
         return "about";
     }
 
-    @GetMapping("/contacts")
-    public String contacts(Model model) {
-        model.addAttribute("activePage", "contacts");
-        return "contacts";
-    }
+//    @GetMapping("/contacts")
+//    public String contacts(Model model) {
+//        model.addAttribute("activePage", "contacts");
+//        return "contacts";
+//    }
 
     @GetMapping("/projects")
     public String projects(Model model) {
