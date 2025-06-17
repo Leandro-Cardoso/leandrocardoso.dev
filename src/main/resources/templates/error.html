@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="#{app.title}"></title>
+  <link rel="icon" type="image/png" th:href="@{/images/favicon.png}">
+  <link rel="stylesheet" th:href="@{/css/app.css}">
+  <link rel="stylesheet" th:href="@{/css/header.css}">
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+  <link rel="stylesheet" th:href="@{/css/error.css}">
+</head>
+<body>
+
+<header th:replace="fragments/header :: header"></header>
+
+<main class="content">
+
+  <h1 th:text="#{app.error.404.title}"
+      th:if="${errorCode == 404}"></h1>
+  <h1 th:text="#{app.error.500.title}"
+      th:if="${errorCode == 500}"></h1>
+  <h1 th:text="#{app.error.title}"
+      th:if="${errorCode == null}"></h1>
+
+  <div class="error-content">
+
+    <img th:src="#{app.error.image_url}"
+         th:alt="#{app.error.image_alt}"
+         class="error-image">
+
+    <p th:text="#{app.error.404.message}"
+       th:if="${errorCode == 404}"></p>
+    <p th:text="#{app.error.500.message}"
+       th:if="${errorCode == 500}"></p>
+    <p th:text="#{app.error.message}"
+       th:if="${errorCode == null}"></p>
+
+  </div>
+
+</main>
+
+<footer th:replace="fragments/footer :: footer"></footer>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+.error-content {
+    background-color: var(--color-background-secundary);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing);
+
+    border-radius: var(--spacing);
+    padding: var(--spacing);
+}
+
+.error-content img {
+    height: 50px;
+}
