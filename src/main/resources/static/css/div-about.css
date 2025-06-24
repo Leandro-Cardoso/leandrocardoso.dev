@@ -2,10 +2,10 @@
 .div-about .about-text {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing);
 }
 
 .div-about .about-text {
+    gap: var(--spacing);
     text-align: center;
 }
 

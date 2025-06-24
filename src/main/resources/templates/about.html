@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{app.title}"></title>
+    <link rel="icon" type="image/png" th:href="@{/images/favicon.png}">
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <link rel="stylesheet" th:href="@{/css/div-about.css}">
+    <link rel="stylesheet" th:href="@{/css/about.css}">
+</head>
+<body>
+
+<header th:replace="fragments/header :: header"></header>
+
+<main class="content">
+
+    <h1 th:text="#{app.about.title}"></h1>
+
+    <h2 th:text="#{app.about.hardskills}"></h2>
+
+    <div th:replace="fragments/div-about :: div-about"></div>
+
+    <h2 th:text="#{app.about.softskills}"></h2>
+
+    <div class="softskills-content">
+        <div th:utext="#{app.about.hobbies}"
+             class="softskills-hobbies"></div>
+        <img th:src="#{app.about.softskills.image.url}" alt="#{app.about.softskills}">
+    </div>
+
+</main>
+
+<footer th:replace="fragments/footer :: footer"></footer>
+
+</body>
+</html>
