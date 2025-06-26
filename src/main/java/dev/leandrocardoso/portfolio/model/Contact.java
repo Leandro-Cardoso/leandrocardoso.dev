@@ -26,7 +26,7 @@ public class Contact {
     @Column(nullable = false)
     private String link;
 
-    @Column(nullable = false)
-    private String image_url;
+    @Column(nullable = false, name = "image_url")
+    private String imageUrl;
 
 }

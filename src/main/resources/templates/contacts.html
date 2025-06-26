@@ -22,7 +22,7 @@
     <ul th:if="${!contacts.isEmpty()}">
       <li th:each="contact : ${contacts}">
         <a th:href="${contact.link}" target="_blank">
-          <img th:src="${contact.image_url}" th:alt="${contact.name}">
+          <img th:src="${contact.imageUrl}" th:alt="${contact.name}">
           <p th:text="${contact.name}"></p>
         </a>
       </li>
