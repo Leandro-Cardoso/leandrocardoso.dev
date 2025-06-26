@@ -24,11 +24,15 @@ public class ContactController {
 
     @GetMapping
     public String contacts(Model model, HttpServletRequest request) {
+
         List<Contact> contacts = contactService.getAllContacts();
+
         model.addAttribute("contacts", contacts);
         model.addAttribute("activePage", "contacts");
         model.addAttribute("request", request);
+
         return "contacts";
+
     }
 
 }

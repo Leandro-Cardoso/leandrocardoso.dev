@@ -26,6 +26,9 @@ public class AcademicQualification {
     @Column(nullable = false)
     private String course;
 
+    @Column(nullable = false, name = "course_br")
+    private String courseBR;
+
     @Column(nullable = false, name = "start_year")
     private int startYear;
 
@@ -34,5 +37,8 @@ public class AcademicQualification {
 
     @Column(nullable = false)
     private String status;
+
+    @Column(nullable = false, name = "status_br")
+    private String statusBR;
 
 }

@@ -18,18 +18,61 @@
 
     <h1 th:text="#{app.about.title}"></h1>
 
-    <!-- Soft Skills -->
+    <!-- Hard Skills -->
     <h2 th:text="#{app.about.hardskills}"></h2>
 
     <div th:replace="fragments/div-about :: div-about"></div>
 
-    <!-- TODO: Formacao Academica / Academic Qualifications -->
+    <div class="skill-cards">
+        <div class="academic-certifications-languages">
+            <!-- TODO: Tecnologias / Techs -->
 
-    <!-- TODO: Certificados / Certifications -->
+            <div class="skill-card">
+                <h3 th:text="#{app.about.skills.academic}"></h3>
+                <ul th:if="${!academicQualifications.isEmpty()}">
+                    <li th:each="academicQualification : ${academicQualifications}">
+                        <p>
+                            <strong th:text="#{app.about.skills.academic.university}"></strong>
+                            <span th:text="${academicQualification.university}"></span>
+                        </p>
+                        <p>
+                            <strong th:text="#{app.about.skills.academic.course}"></strong>
+                            <span th:text="${#locale.language == 'pt' ? academicQualification.courseBR : academicQualification.course}"></span>
+                        </p>
+                        <p>
+                            <strong th:text="#{app.about.skills.academic.start_year}"></strong>
+                            <span th:text="${academicQualification.startYear}"></span>
+                        </p>
+                        <p>
+                            <strong th:text="#{app.about.skills.academic.graduation_year}"></strong>
+                            <span th:text="${academicQualification.graduationYear}"></span>
+                        </p>
+                        <p>
+                            <strong th:text="#{app.about.skills.academic.status}"></strong>
+                            <span th:text="${#locale.language == 'pt' ? academicQualification.statusBR : academicQualification.status}"></span>
+                        </p>
+                    </li>
+                </ul>
+            </div>
 
-    <!-- TODO: Idiomas / Languages -->
+            <div class="skill-card">
+                <h3 th:text="#{app.about.skills.certifications}"></h3>
+                <!-- TODO: Certificados / Certifications -->
+            </div>
 
-    <!-- TODO: Experiencias Profissionais / Work Experience -->
+            <div class="skill-card">
+                <h3 th:text="#{app.about.skills.languages}"></h3>
+                <!-- TODO: Idiomas / Languages -->
+            </div>
+
+        </div>
+
+        <div class="skill-card">
+            <h3 th:text="#{app.about.skills.works}"></h3>
+            <!-- TODO: Experiencias Profissionais / Work Experience -->
+        </div>
+
+    </div>
 
     <!-- Soft Skills -->
     <h2 th:text="#{app.about.softskills}"></h2>
