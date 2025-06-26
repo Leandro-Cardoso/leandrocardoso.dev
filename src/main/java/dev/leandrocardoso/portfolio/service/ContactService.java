@@ -18,7 +18,7 @@ public class ContactService {
     }
 
     public List<Contact> getAllContacts() {
-        return contactRepository.findAll();
+        return this.contactRepository.findAll();
     }
 
 }
