@@ -27,6 +27,7 @@
     --color-primary: #D4A017;
     --color-background-primary: #121212;
     --color-background-secundary: #1E1E1E;
+    --color-background-tertiary: #252525;
     --color-text: #aaa;
     --color-link: #fff;
     --color-link-hover: var(--color-primary);
@@ -84,9 +85,11 @@ body {
 h1, h2, h3 {
     font-weight: var(--font-weight-bold);
 
-    margin: 0 0 calc(var(--spacing) * 2) 0;
-
     display: inline-block;
+}
+
+h1, h2 {
+    margin: 0 0 calc(var(--spacing) * 2) 0;
 }
 
 h2, h3 {
@@ -102,6 +105,10 @@ h1 {
 
     width: fit-content;
     padding: var(--spacing);
+}
+
+h3 {
+    margin: 0 0 var(--spacing) 0;
 }
 
 strong {
