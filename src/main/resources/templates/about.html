@@ -27,6 +27,7 @@
         <div class="academic-certifications-languages">
             <!-- TODO: Tecnologias / Techs -->
 
+            <!-- Academic Qualifications -->
             <div class="skill-card">
                 <h3 th:text="#{app.about.skills.academic}"></h3>
                 <ul th:if="${!academicQualifications.isEmpty()}">
@@ -55,11 +56,28 @@
                 </ul>
             </div>
 
+            <!-- Certifications -->
             <div class="skill-card">
                 <h3 th:text="#{app.about.skills.certifications}"></h3>
-                <!-- TODO: Certificados / Certifications -->
+                <ul th:if="${!certifications.isEmpty()}">
+                    <li th:each="certification : ${certifications}">
+                        <p>
+                            <strong th:text="#{app.about.skills.certification.institution}"></strong>
+                            <span th:text="${certification.institution}"></span>
+                        </p>
+                        <p>
+                            <strong th:text="#{app.about.skills.certification.certificate}"></strong>
+                            <span th:text="${#locale.language == 'pt' ? certification.certificateBR : certification.certificate}"></span>
+                        </p>
+                        <p>
+                            <strong th:text="#{app.about.skills.certification.year}"></strong>
+                            <span th:text="${certification.year}"></span>
+                        </p>
+                    </li>
+                </ul>
             </div>
 
+            <!-- Languages -->
             <div class="skill-card">
                 <h3 th:text="#{app.about.skills.languages}"></h3>
                 <!-- TODO: Idiomas / Languages -->
@@ -67,6 +85,7 @@
 
         </div>
 
+        <!-- Work Experience -->
         <div class="skill-card">
             <h3 th:text="#{app.about.skills.works}"></h3>
             <!-- TODO: Experiencias Profissionais / Work Experience -->
