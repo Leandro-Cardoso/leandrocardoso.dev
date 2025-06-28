@@ -80,7 +80,30 @@
             <!-- Languages -->
             <div class="skill-card">
                 <h3 th:text="#{app.about.skills.languages}"></h3>
-                <!-- TODO: Idiomas / Languages -->
+                <ul th:if="${!languages.isEmpty()}">
+                    <li th:each="language : ${languages}">
+                        <p>
+                            <strong th:text="#{app.about.skills.language}"></strong>
+                            <span th:text="${#locale.language == 'pt' ? language.languageBR : language.language}"></span>
+                        </p>
+                        <p>
+                            <strong th:text="#{app.about.skills.language.reading}"></strong>
+                            <span th:text="${#locale.language == 'pt' ? language.readingBR : language.reading}"></span>
+                        </p>
+                        <p>
+                            <strong th:text="#{app.about.skills.language.writing}"></strong>
+                            <span th:text="${#locale.language == 'pt' ? language.writingBR : language.writing}"></span>
+                        </p>
+                        <p>
+                            <strong th:text="#{app.about.skills.language.speaking}"></strong>
+                            <span th:text="${#locale.language == 'pt' ? language.speakingBR : language.speaking}"></span>
+                        </p>
+                        <p>
+                            <strong th:text="#{app.about.skills.language.listening}"></strong>
+                            <span th:text="${#locale.language == 'pt' ? language.listeningBR : language.listening}"></span>
+                        </p>
+                    </li>
+                </ul>
             </div>
 
         </div>
