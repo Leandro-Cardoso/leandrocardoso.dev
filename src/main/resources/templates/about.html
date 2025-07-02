@@ -111,7 +111,32 @@
         <!-- Work Experience -->
         <div class="skill-card">
             <h3 th:text="#{app.about.skills.works}"></h3>
-            <!-- TODO: Experiencias Profissionais / Work Experience -->
+            <ul th:if="${!workExperiences.isEmpty()}">
+                <li th:each="workExperience : ${workExperiences}">
+                    <p>
+                        <strong th:text="#{app.about.skills.works.job_title}"></strong>
+                        <span th:text="${#locale.language == 'pt' ? workExperience.jobTitleBR : workExperience.jobTitle}"></span>
+                    </p>
+                    <p th:if="${workExperience.company != null}">
+                        <strong th:text="#{app.about.skills.works.company}"></strong>
+                        <span th:text="${workExperience.company}"></span>
+                    </p>
+                    <p>
+                        <strong th:text="#{app.about.skills.works.start_year}"></strong>
+                        <span th:text="${workExperience.startYear}"></span>
+                        <span th:if="${workExperience.endYear == null}"
+                              th:text="#{app.about.skills.works.present}"></span>
+                    </p>
+                    <p th:if="${workExperience.endYear != null}">
+                        <strong th:text="#{app.about.skills.works.end_year}"></strong>
+                        <span th:text="${workExperience.endYear}"></span>
+                    </p>
+                    <p>
+                        <strong th:text="#{app.about.skills.works.responsibilities}"></strong>
+                        <span th:text="${#locale.language == 'pt' ? workExperience.responsibilitiesBR : workExperience.responsibilities}"></span>
+                    </p>
+                </li>
+            </ul>
         </div>
 
     </div>

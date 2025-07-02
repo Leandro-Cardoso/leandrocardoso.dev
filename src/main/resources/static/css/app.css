@@ -86,10 +86,7 @@ h1, h2, h3 {
     font-weight: var(--font-weight-bold);
 
     display: inline-block;
-}
-
-h1, h2 {
-    margin: 0 0 calc(var(--spacing) * 2) 0;
+    margin: var(--spacing) 0;
 }
 
 h2, h3 {
@@ -105,10 +102,6 @@ h1 {
 
     width: fit-content;
     padding: var(--spacing);
-}
-
-h3 {
-    margin: 0 0 var(--spacing) 0;
 }
 
 strong {
