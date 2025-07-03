@@ -23,12 +23,23 @@
 
     <div th:replace="fragments/div-about :: div-about"></div>
 
+    <!-- Techs -->
+    <div class="skill-card">
+        <h3 th:text="#{app.about.skills.techs}"></h3>
+        <ul th:if="${!techs.isEmpty()}" class="techs">
+            <li th:each="tech : ${techs}">
+                <img th:src="${tech.imageUrl}" th:alt="${tech.name}">
+                <strong th:text="${tech.name}"></strong>
+            </li>
+        </ul>
+    </div>
+
     <div class="skill-cards">
+
         <div class="academic-certifications-languages">
-            <!-- TODO: Tecnologias / Techs -->
 
             <!-- Academic Qualifications -->
-            <div class="skill-card">
+            <div class="skill-card card-bicolor">
                 <h3 th:text="#{app.about.skills.academic}"></h3>
                 <ul th:if="${!academicQualifications.isEmpty()}">
                     <li th:each="academicQualification : ${academicQualifications}">
@@ -57,7 +68,7 @@
             </div>
 
             <!-- Certifications -->
-            <div class="skill-card">
+            <div class="skill-card card-bicolor">
                 <h3 th:text="#{app.about.skills.certifications}"></h3>
                 <ul th:if="${!certifications.isEmpty()}">
                     <li th:each="certification : ${certifications}">
@@ -78,7 +89,7 @@
             </div>
 
             <!-- Languages -->
-            <div class="skill-card">
+            <div class="skill-card card-bicolor">
                 <h3 th:text="#{app.about.skills.languages}"></h3>
                 <ul th:if="${!languages.isEmpty()}">
                     <li th:each="language : ${languages}">
@@ -109,7 +120,7 @@
         </div>
 
         <!-- Work Experience -->
-        <div class="skill-card">
+        <div class="skill-card card-bicolor">
             <h3 th:text="#{app.about.skills.works}"></h3>
             <ul th:if="${!workExperiences.isEmpty()}">
                 <li th:each="workExperience : ${workExperiences}">
@@ -137,6 +148,7 @@
                     </p>
                 </li>
             </ul>
+
         </div>
 
     </div>

@@ -1,13 +1,7 @@
 package dev.leandrocardoso.portfolio.controller;
 
-import dev.leandrocardoso.portfolio.model.AcademicQualification;
-import dev.leandrocardoso.portfolio.model.Certification;
-import dev.leandrocardoso.portfolio.model.Language;
-import dev.leandrocardoso.portfolio.model.WorkExperience;
-import dev.leandrocardoso.portfolio.service.AcademicQualificationService;
-import dev.leandrocardoso.portfolio.service.CertificationService;
-import dev.leandrocardoso.portfolio.service.LanguageService;
-import dev.leandrocardoso.portfolio.service.WorkExperienceService;
+import dev.leandrocardoso.portfolio.model.*;
+import dev.leandrocardoso.portfolio.service.*;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,17 +16,20 @@ import java.util.List;
 @RequestMapping("/about")
 public class AboutController {
 
+    private final TechService techService;
     private final AcademicQualificationService academicQualificationService;
     private final CertificationService certificationService;
     private final LanguageService languageService;
     private final WorkExperienceService workExperienceService;
 
     @Autowired
-    public AboutController(AcademicQualificationService academicQualificationService,
+    public AboutController(TechService techService,
+                           AcademicQualificationService academicQualificationService,
                            CertificationService certificationService,
                            LanguageService languageService,
                            WorkExperienceService workExperienceService) {
 
+        this.techService = techService;
         this.academicQualificationService = academicQualificationService;
         this.certificationService = certificationService;
         this.languageService = languageService;
@@ -43,16 +40,19 @@ public class AboutController {
     @GetMapping
     public String home(Model model, HttpServletRequest request) {
 
+        List<Tech> techs = techService.getAllTechs();
         List<AcademicQualification> academicQualifications = academicQualificationService.getAllAcademicQualifications();
         List<Certification> certifications = certificationService.getAllCertifications();
         List<Language> languages = languageService.getAllLanguages();
         List<WorkExperience> workExperiences = workExperienceService.getAllWorkExperiences();
 
+        Collections.reverse(techs);
         Collections.reverse(academicQualifications);
         Collections.reverse(certifications);
         Collections.reverse(languages);
         Collections.reverse(workExperiences);
 
+        model.addAttribute("techs", techs);
         model.addAttribute("academicQualifications", academicQualifications);
         model.addAttribute("certifications", certifications);
         model.addAttribute("languages", languages);
