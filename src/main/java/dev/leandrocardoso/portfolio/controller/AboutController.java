@@ -53,6 +53,7 @@ public class AboutController {
         Collections.reverse(workExperiences);
 
         model.addAttribute("techs", techs);
+        model.addAttribute("techsSize", techs.size());
         model.addAttribute("academicQualifications", academicQualifications);
         model.addAttribute("certifications", certifications);
         model.addAttribute("languages", languages);
