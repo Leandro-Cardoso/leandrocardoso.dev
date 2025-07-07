@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{app.title}"></title>
+    <link rel="icon" type="image/png" th:href="@{/images/favicon.png}">
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+<body>
+
+<header th:replace="fragments/header :: header"></header>
+
+<main class="content">
+
+    <h1 th:text="#{app.projects.title}"></h1>
+
+    <!-- Projects -->
+    <ul th:if="${!projects.isEmpty()}">
+        <li th:each="project : ${projects}">
+
+            <img th:src="${project.imageUrl}" th:alt="${project.name}">
+
+            <div>
+                <p>
+                    <strong th:text="#{app.projects.name}"></strong>
+                    <span th:text="${#locale.language == 'pt' ? project.nameBR == null ? project.name : project.nameBR : project.name}"></span>
+                </p>
+
+                <ul th:if="${!project.techs.isEmpty()}">
+                    <li th:each="tech : ${project.techs}">
+                        <img th:src="${tech.imageUrl}" th:alt="${tech.name}">
+                    </li>
+                </ul>
+
+                <p>
+                    <strong th:text="#{app.projects.description}"></strong>
+                    <span th:text="${project.description}"></span>
+                </p>
+
+                <div>
+                    <button th:if="${project.link != null}"
+                            th:href="${project.link}"
+                            target="_blank">
+                        <span th:text="#{app.projects.open}"></span>
+                    </button>
+
+                    <button th:if="${project.github != null}"
+                            th:href="${project.github}"
+                            target="_blank">
+                        <img th:src="#{app.projects.github.img_url}" th:alt="#{app.projects.github}">
+                        <span th:text="#{app.projects.github}"></span>
+                    </button>
+                </div>
+            </div>
+
+        </li>
+    </ul>
+
+    <div th:replace="fragments/div-about :: div-about"></div>
+
+</main>
+
+<footer th:replace="fragments/footer :: footer"></footer>
+
+</body>
+</html>

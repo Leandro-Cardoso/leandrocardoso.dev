@@ -38,7 +38,7 @@ public class AboutController {
     }
 
     @GetMapping
-    public String home(Model model, HttpServletRequest request) {
+    public String about(Model model, HttpServletRequest request) {
 
         List<Tech> techs = techService.getAllTechs();
         List<AcademicQualification> academicQualifications = academicQualificationService.getAllAcademicQualifications();
