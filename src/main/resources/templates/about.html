@@ -28,7 +28,7 @@
         <h3 th:text="#{app.about.skills.techs}"></h3>
         <ul th:if="${!techs.isEmpty()}" class="techs">
             <li th:each="tech : ${techs}">
-                <img th:src="${tech.imageUrl}" th:alt="${tech.name}">
+                <img th:src="${tech.image_url}" th:alt="${tech.name}">
                 <strong th:text="${tech.name}"></strong>
             </li>
         </ul>
@@ -49,19 +49,19 @@
                         </p>
                         <p>
                             <strong th:text="#{app.about.skills.academic.course}"></strong>
-                            <span th:text="${#locale.language == 'pt' ? academicQualification.courseBR : academicQualification.course}"></span>
+                            <span th:text="${#locale.language == 'pt' ? academicQualification.course_br : academicQualification.course}"></span>
                         </p>
                         <p>
                             <strong th:text="#{app.about.skills.academic.start_year}"></strong>
-                            <span th:text="${academicQualification.startYear}"></span>
+                            <span th:text="${academicQualification.start_year}"></span>
                         </p>
                         <p>
                             <strong th:text="#{app.about.skills.academic.graduation_year}"></strong>
-                            <span th:text="${academicQualification.graduationYear}"></span>
+                            <span th:text="${academicQualification.graduation_year}"></span>
                         </p>
                         <p>
                             <strong th:text="#{app.about.skills.academic.status}"></strong>
-                            <span th:text="${#locale.language == 'pt' ? academicQualification.statusBR : academicQualification.status}"></span>
+                            <span th:text="${#locale.language == 'pt' ? academicQualification.status_br : academicQualification.status}"></span>
                         </p>
                     </li>
                 </ul>
@@ -78,7 +78,7 @@
                         </p>
                         <p>
                             <strong th:text="#{app.about.skills.certification.certificate}"></strong>
-                            <span th:text="${#locale.language == 'pt' ? certification.certificateBR : certification.certificate}"></span>
+                            <span th:text="${#locale.language == 'pt' ? certification.certificate_br : certification.certificate}"></span>
                         </p>
                         <p>
                             <strong th:text="#{app.about.skills.certification.year}"></strong>
@@ -95,23 +95,23 @@
                     <li th:each="language : ${languages}">
                         <p>
                             <strong th:text="#{app.about.skills.language}"></strong>
-                            <span th:text="${#locale.language == 'pt' ? language.languageBR : language.language}"></span>
+                            <span th:text="${#locale.language == 'pt' ? language.language_br : language.language}"></span>
                         </p>
                         <p>
                             <strong th:text="#{app.about.skills.language.reading}"></strong>
-                            <span th:text="${#locale.language == 'pt' ? language.readingBR : language.reading}"></span>
+                            <span th:text="${#locale.language == 'pt' ? language.reading_br : language.reading}"></span>
                         </p>
                         <p>
                             <strong th:text="#{app.about.skills.language.writing}"></strong>
-                            <span th:text="${#locale.language == 'pt' ? language.writingBR : language.writing}"></span>
+                            <span th:text="${#locale.language == 'pt' ? language.writing_br : language.writing}"></span>
                         </p>
                         <p>
                             <strong th:text="#{app.about.skills.language.speaking}"></strong>
-                            <span th:text="${#locale.language == 'pt' ? language.speakingBR : language.speaking}"></span>
+                            <span th:text="${#locale.language == 'pt' ? language.speaking_br : language.speaking}"></span>
                         </p>
                         <p>
                             <strong th:text="#{app.about.skills.language.listening}"></strong>
-                            <span th:text="${#locale.language == 'pt' ? language.listeningBR : language.listening}"></span>
+                            <span th:text="${#locale.language == 'pt' ? language.listening_br : language.listening}"></span>
                         </p>
                     </li>
                 </ul>
@@ -126,7 +126,7 @@
                 <li th:each="workExperience : ${workExperiences}">
                     <p>
                         <strong th:text="#{app.about.skills.works.job_title}"></strong>
-                        <span th:text="${#locale.language == 'pt' ? workExperience.jobTitleBR : workExperience.jobTitle}"></span>
+                        <span th:text="${#locale.language == 'pt' ? workExperience.job_title_br : workExperience.jobTitle}"></span>
                     </p>
                     <p th:if="${workExperience.company != null}">
                         <strong th:text="#{app.about.skills.works.company}"></strong>
@@ -134,17 +134,17 @@
                     </p>
                     <p>
                         <strong th:text="#{app.about.skills.works.start_year}"></strong>
-                        <span th:text="${workExperience.startYear}"></span>
-                        <span th:if="${workExperience.endYear == null}"
+                        <span th:text="${workExperience.start_year}"></span>
+                        <span th:if="${workExperience.end_year == null}"
                               th:text="#{app.about.skills.works.present}"></span>
                     </p>
-                    <p th:if="${workExperience.endYear != null}">
+                    <p th:if="${workExperience.end_year != null}">
                         <strong th:text="#{app.about.skills.works.end_year}"></strong>
-                        <span th:text="${workExperience.endYear}"></span>
+                        <span th:text="${workExperience.end_year}"></span>
                     </p>
                     <p>
                         <strong th:text="#{app.about.skills.works.responsibilities}"></strong>
-                        <span th:text="${#locale.language == 'pt' ? workExperience.responsibilitiesBR : workExperience.responsibilities}"></span>
+                        <span th:text="${#locale.language == 'pt' ? workExperience.responsibilities_br : workExperience.responsibilities}"></span>
                     </p>
                 </li>
             </ul>
