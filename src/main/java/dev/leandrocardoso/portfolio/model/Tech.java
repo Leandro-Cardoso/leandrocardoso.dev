@@ -23,7 +23,7 @@ public class Tech {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false, name = "image_url")
-    private String imageUrl;
+    @Column(nullable = false)
+    private String image_url;
 
 }

@@ -26,8 +26,8 @@ public class Certification {
     @Column(nullable = false)
     private String certificate;
 
-    @Column(nullable = false, name = "certificate_br")
-    private String certificateBR;
+    @Column(nullable = false)
+    private String certificate_br;
 
     @Column(nullable = false)
     private int year;

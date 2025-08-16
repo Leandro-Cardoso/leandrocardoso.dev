@@ -20,25 +20,25 @@ public class WorkExperience {
     @GeneratedValue
     private UUID id;
 
-    @Column(nullable = false, name = "job_title")
-    private String jobTitle;
+    @Column(nullable = false)
+    private String job_title;
 
-    @Column(nullable = false, name = "job_title_br")
-    private String jobTitleBR;
+    @Column(nullable = false)
+    private String job_title_br;
 
     @Column()
     private String company;
 
-    @Column(nullable = false, name = "start_year")
-    private int startYear;
+    @Column(nullable = false)
+    private int start_year;
 
-    @Column(name = "end_year")
-    private Integer endYear;
+    @Column()
+    private Integer end_year;
 
     @Column(nullable = false)
     private String responsibilities;
 
-    @Column(nullable = false, name = "responsibilities_br")
-    private String responsibilitiesBR;
+    @Column(nullable = false)
+    private String responsibilities_br;
 
 }

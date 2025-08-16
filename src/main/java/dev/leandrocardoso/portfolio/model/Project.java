@@ -24,14 +24,14 @@ public class Project {
     @Column(nullable = false)
     private String name;
 
-    @Column(name = "name_br")
-    private String nameBR;
+    @Column()
+    private String name_br;
 
     @Column(nullable = false)
     private String description;
 
-    @Column(nullable = false, name = "description_br")
-    private String descriptionBR;
+    @Column(nullable = false)
+    private String description_br;
 
     @Column(unique = true)
     private String github;
@@ -47,7 +47,7 @@ public class Project {
     )
     private List<Tech> techs;
 
-    @Column(nullable = false, name = "image_url")
-    private String imageUrl;
+    @Column(nullable = false)
+    private String image_url;
 
 }

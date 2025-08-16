@@ -26,19 +26,19 @@ public class AcademicQualification {
     @Column(nullable = false)
     private String course;
 
-    @Column(nullable = false, name = "course_br")
-    private String courseBR;
+    @Column(nullable = false)
+    private String course_br;
 
-    @Column(nullable = false, name = "start_year")
-    private int startYear;
+    @Column(nullable = false)
+    private int start_year;
 
-    @Column(nullable = false, name = "graduation_year")
-    private int graduationYear;
+    @Column(nullable = false)
+    private int graduation_year;
 
     @Column(nullable = false)
     private String status;
 
-    @Column(nullable = false, name = "status_br")
-    private String statusBR;
+    @Column(nullable = false)
+    private String status_br;
 
 }
