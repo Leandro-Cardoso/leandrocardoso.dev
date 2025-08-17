@@ -49,17 +49,49 @@ INSERT INTO tb_techs (name, image_url) VALUES
 
 -- Insert projects
 INSERT INTO tb_projects (name, name_br, description, description_br, github, link, image_url) VALUES
-    ('Other Projects', 'Outros Projetos', 'Test...', 'Teste...', 'teste1', 'teste1', 'images/social/github.svg'),
-	('Projects', null, 'Test...', 'Teste...', 'teste2', null, 'images/social/github.svg');
+    ('Other GitHub Projects', 'Outros Projetos do GitHub', 'Other unfeatured GitHub projects.', 'Outros projetos do GitHub sem destaque.', 'https://github.com/Leandro-Cardoso?tab=repositories', null, 'images/gears.svg'),
+	('Projects', null, 'Test...', 'Teste...', 'github', 'teste', 'images/gears.svg');
 
 -- Insert projects techs
 INSERT INTO tb_projects_techs (project_id, tech_id) VALUES
     (
-		(SELECT id FROM tb_projects WHERE github = 'teste1'),
-		(SELECT id FROM tb_techs WHERE name = 'Java')
+    	(SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso?tab=repositories'),
+    	(SELECT id FROM tb_techs WHERE name = 'JavaScript')
+    ),
+	(
+    	(SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso?tab=repositories'),
+    	(SELECT id FROM tb_techs WHERE name = 'React')
+    ),
+	(
+    	(SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso?tab=repositories'),
+    	(SELECT id FROM tb_techs WHERE name = 'C++')
+    ),
+	(
+    	(SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso?tab=repositories'),
+    	(SELECT id FROM tb_techs WHERE name = 'Python')
+    ),
+	(
+    	(SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso?tab=repositories'),
+    	(SELECT id FROM tb_techs WHERE name = 'Flask')
+    ),
+	(
+    	(SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso?tab=repositories'),
+    	(SELECT id FROM tb_techs WHERE name = 'Django')
+    ),
+	(
+    	(SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso?tab=repositories'),
+    	(SELECT id FROM tb_techs WHERE name = 'SQL')
+    ),
+	(
+    	(SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso?tab=repositories'),
+    	(SELECT id FROM tb_techs WHERE name = 'Java')
+    ),
+    (
+		(SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso?tab=repositories'),
+		(SELECT id FROM tb_techs WHERE name = 'Spring Boot')
 	),
 	(
-		(SELECT id FROM tb_projects WHERE github = 'teste2'),
+		(SELECT id FROM tb_projects WHERE github = 'github'),
 		(SELECT id FROM tb_techs WHERE name = 'Python')
 	);
 

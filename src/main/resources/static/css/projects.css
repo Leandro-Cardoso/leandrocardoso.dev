@@ -26,6 +26,10 @@ li.project {
     align-items: center;
 }
 
+ul.techs {
+    flex-wrap: wrap;
+}
+
 img.project-img {
     height: 200px;
 }
@@ -43,6 +47,7 @@ img.tech-img {
 div.buttons {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: var(--spacing);
 }
 
