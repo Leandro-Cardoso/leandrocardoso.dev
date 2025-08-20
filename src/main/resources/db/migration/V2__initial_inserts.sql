@@ -49,34 +49,70 @@ INSERT INTO tb_techs (name, image_url) VALUES
 
 -- Insert projects
 INSERT INTO tb_projects (name, name_br, description, description_br, github, link, image_url) VALUES
-    ('Other GitHub Projects', 'Outros Projetos do GitHub', 'Other unfeatured GitHub projects.', 'Outros projetos do GitHub sem destaque.', 'https://github.com/Leandro-Cardoso?tab=repositories', null, 'images/gears.svg'),
-	('Projects', null, 'Test...', 'Teste...', 'github', 'teste', 'images/gears.svg');
+    (
+        'Other GitHub Projects',
+        'Outros Projetos do GitHub',
+        'Other unfeatured GitHub projects.',
+        'Outros projetos do GitHub sem destaque.',
+        'https://github.com/Leandro-Cardoso?tab=repositories',
+        null,
+        'images/gears.svg'
+    ),
+	(
+	    'Sea Battle',
+	    'Batalha Naval',
+	    'Battleship game for the terminal (CMD). This project was developed as an assignment for the Computational Thinking course, taught by Professor João Coelho, in the Software Engineering program at the University of Vassouras.',
+	    'Um jogo de batalha naval para rodar no terminal (CMD). Esse projeto foi desenvolvido como trabalho da Universidade de Vassouras, curso de Engenharia de Software, disciplina de Pensamento Computacional, ministrada pelo professor João Coelho.',
+	    'https://github.com/Leandro-Cardoso/GAME-Sea-Battle-CMD',
+	    null,
+	    'images/preview/battleship.png'
+	),
+	(
+	    'Minefield',
+    	'Compo Minado',
+    	'Minefield game made in Java to run on the terminal.',
+    	'Jogo Campo Minado feito em Java para rodar no terminal.',
+    	'https://github.com/Leandro-Cardoso/GAME-Minefield-Java',
+    	null,
+    	'images/gears.svg'
+    ),
+    (
+        'Tic-Tac-Toe',
+        'Tic-Tac-Toe',
+        'Tic-Tac-Toe game for the terminal, made in Java.',
+        'Jogo Tic-Tac-Toe para terminal, feito em Java.',
+        'https://github.com/Leandro-Cardoso/GAME-Tic-Tac-Toe-Java',
+        null,
+        'images/gears.svg'
+    ),
+    (
+        'Emprego Seguro API',
+        'Emprego Seguro API',
+        'Emprego Seguro app project. This project was completed for the Integrated Extension Practices IV course, 4th semester, class A, Software Engineering, University of Vassouras (Univassouras), by teacher Dr. Diego Ramos Inácio.',
+        'Trabalho sobre o projeto do app Emprego Seguro. Trabalho realizado para a disciplina de Práticas Extensionistas Integradoras IV, 4º período, turma A, curso de Engenharia de Software da Universidade de Vassouras (Univassouras), ministrado pelo professor Dr. Diego Ramos Inácio.',
+        'https://github.com/Leandro-Cardoso/Emprego-Seguro-api',
+        null,
+        'images/gears.svg'
+    ),
+    (
+        'My Portfolio',
+        'Meu Portfolio',
+        'Portfolio developed to show my projects and works as a Software Engineer and Back-End Developer.',
+        'Portfolio desenvolvido para divulgação dos meus projetos e do meu trabalho como Engenheiro de Software e Desenvolvedor BackEnd.',
+        'https://github.com/Leandro-Cardoso/leandrocardoso.dev',
+        null,
+        'images/gears.svg'
+    );
 
 -- Insert projects techs
 INSERT INTO tb_projects_techs (project_id, tech_id) VALUES
     (
-    	(SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso?tab=repositories'),
-    	(SELECT id FROM tb_techs WHERE name = 'JavaScript')
-    ),
+		(SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso?tab=repositories'),
+		(SELECT id FROM tb_techs WHERE name = 'Spring Boot')
+	),
 	(
     	(SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso?tab=repositories'),
-    	(SELECT id FROM tb_techs WHERE name = 'React')
-    ),
-	(
-    	(SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso?tab=repositories'),
-    	(SELECT id FROM tb_techs WHERE name = 'C++')
-    ),
-	(
-    	(SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso?tab=repositories'),
-    	(SELECT id FROM tb_techs WHERE name = 'Python')
-    ),
-	(
-    	(SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso?tab=repositories'),
-    	(SELECT id FROM tb_techs WHERE name = 'Flask')
-    ),
-	(
-    	(SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso?tab=repositories'),
-    	(SELECT id FROM tb_techs WHERE name = 'Django')
+    	(SELECT id FROM tb_techs WHERE name = 'Java')
     ),
 	(
     	(SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso?tab=repositories'),
@@ -84,16 +120,68 @@ INSERT INTO tb_projects_techs (project_id, tech_id) VALUES
     ),
 	(
     	(SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso?tab=repositories'),
-    	(SELECT id FROM tb_techs WHERE name = 'Java')
+    	(SELECT id FROM tb_techs WHERE name = 'Django')
+    ),
+	(
+    	(SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso?tab=repositories'),
+    	(SELECT id FROM tb_techs WHERE name = 'Flask')
     ),
     (
-		(SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso?tab=repositories'),
-		(SELECT id FROM tb_techs WHERE name = 'Spring Boot')
-	),
+    	(SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso?tab=repositories'),
+    	(SELECT id FROM tb_techs WHERE name = 'Python')
+    ),
 	(
-		(SELECT id FROM tb_projects WHERE github = 'github'),
+    	(SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso?tab=repositories'),
+    	(SELECT id FROM tb_techs WHERE name = 'C++')
+    ),
+    (
+        	(SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso?tab=repositories'),
+        	(SELECT id FROM tb_techs WHERE name = 'React')
+    ),
+    (
+    	(SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso?tab=repositories'),
+    	(SELECT id FROM tb_techs WHERE name = 'JavaScript')
+    ),
+	(
+		(SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso/GAME-Sea-Battle-CMD'),
 		(SELECT id FROM tb_techs WHERE name = 'Python')
-	);
+	),
+    (
+        (SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso/GAME-Minefield-Java'),
+        (SELECT id FROM tb_techs WHERE name = 'Java')
+    ),
+    (
+        (SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso/GAME-Tic-Tac-Toe-Java'),
+        (SELECT id FROM tb_techs WHERE name = 'Java')
+    ),
+    (
+        (SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso/Emprego-Seguro-api'),
+        (SELECT id FROM tb_techs WHERE name = 'Flask')
+    ),
+    (
+        (SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso/Emprego-Seguro-api'),
+        (SELECT id FROM tb_techs WHERE name = 'Python')
+    ),
+    (
+        (SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso/leandrocardoso.dev'),
+        (SELECT id FROM tb_techs WHERE name = 'Spring Boot')
+    ),
+    (
+        (SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso/leandrocardoso.dev'),
+        (SELECT id FROM tb_techs WHERE name = 'Java')
+    ),
+    (
+        (SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso/leandrocardoso.dev'),
+        (SELECT id FROM tb_techs WHERE name = 'PostgreSQL')
+    ),
+    (
+        (SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso/leandrocardoso.dev'),
+        (SELECT id FROM tb_techs WHERE name = 'SQL')
+    ),
+    (
+        (SELECT id FROM tb_projects WHERE github = 'https://github.com/Leandro-Cardoso/leandrocardoso.dev'),
+        (SELECT id FROM tb_techs WHERE name = 'JavaScript')
+    );
 
 -- Insert work experiences
 INSERT INTO tb_work_experiences (job_title, job_title_br, company, start_year, end_year, responsibilities, responsibilities_br) VALUES
